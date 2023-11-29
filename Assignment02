@@ -1,0 +1,220 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. List the directory contents date wise sorted. ( man ls)
+
+ls -t
+f.txt       select     subjects.txt  wc.txt      numbers.text
+select.txt  taste.txt  lserr.txt     sorted.txt
+
+
+2. List the directory contents size wise sorted.(man ls)
+
+ls -S
+taste.txt  subjects.txt  sorted.txt  select.txt
+lserr.txt  numbers.text  f.txt       wc.txt
+
+
+3. List directory contents along with their inode no. (man
+ls)
+
+ls -i
+4739437 f.txt         4739439 select.txt    4739436 taste.txt
+4739432 lserr.txt     4739343 sorted.txt    4739431 wc.txt
+4739391 numbers.text  4739435 subjects.txt
+
+
+4. List the contents of the subdirectory.
+
+
+ls -R
+.:
+Day2  OS
+
+./Day2:
+f.txt      numbers.text  sorted.txt    taste.txt
+lserr.txt  select.txt    subjects.txt  wc.txt
+
+./OS:
+course.txt  demo  demo1  demo2  f1.txt  file2.text  one.txt  two.txt
+
+./OS/demo:
+
+./OS/demo1:
+Demo1
+
+./OS/demo1/Demo1:
+course.txt
+
+./OS/demo2:
+
+
+
+5. Create a file, write your surname and name in it and
+save.
+
+cat > name.txt
+Mohite
+Satyajeet
+
+i. now open the same file and add your address in it and
+save.
+
+cat >> name.txt
+Kolhapur 
+Maharashtra
+416101
+satyaje
+
+ii. reopen the same file and check your name and address in
+it.
+
+cat name.txt
+Mohite
+Satyajeet
+Kolhapur
+Maharashtra
+416101
+
+6. how to change the time stamp of file (man touch)
+
+
+ls -l
+total 8
+drwxrwxr-x 2 satyajeet satyajeet 4096 Nov 28 18:10 Day2
+
+
+ls -l
+total 8
+drwxrwxr-x 2 satyajeet satyajeet 4096 Nov 28 18:13 Day2
+
+
+7. Create directory structure : Give following commands ,
+-> mkdir one
+-> cd one
+-> touch 1.txt 11.txt 111.txt
+-> mkdir two
+-> cd two
+-> touch 2.txt 22.txt 222.txt
+-> mkdir three
+-> cd three
+-> touch 3.txt 33.txt 333.txt
+-> mkdir four
+-> cd four
+-> touch 4.txt 44.txt 444.txt
+-> mkdir five
+-> cd five
+-> touch 5.txt 55.txt 555.txt
+-> cd ~ (i.e. go to your home directory)
+
+
+
+8. Considering above directory structure , Do following
+operations :
+
+
+i. list the directory contents of directory named
+"five" from current directory (i.e. home directory).
+ls ~/study/OS_CLASSWORK/One/two/three/four/five
+555.txt  55.txt  5.txt
+
+
+
+
+ii. write your name in a file named "44.txt" of
+directory "four" from current directory.
+
+cat > ~/study/OS_CLASSWORK/One/two/three/four/44.txt
+Satyajeet
+
+cat  ~/study/OS_CLASSWORK/One/two/three/four/44.txt
+Satyajeet
+
+
+iii. remove the file named "555.txt" from directory
+"five" from current directory.
+
+
+rm ~/study/OS_CLASSWORK/One/two/three/four/five/555.txt
+
+
+iv. change directory to five
+one/two/three/four/five/ ).
+( i.e. cd
+
+
+cd  ~/study/OS_CLASSWORK/One/two/three/four/five
+
+v. write your course name in file named "3.txt" which
+resides in directory "three" from current directory (i.e.
+five).also read the same file.
+
+cat > ../../3.txt
+PG-DAC
+
+satyajeet@Predator:~/study/OS_CLASSWORK/One/two/three/four/five$ cat ../../3.txt
+PG-DAC
+
+
+
+vi. list the contents of directory "two" from current
+directory (i.e. five).
+
+ls ../../../
+222.txt  22.txt  2.txt  three
+
+vii. remove file named "222.txt" which belongs to
+directory "two" from current directory (i.e. five)
+
+rm ../../../222.txt
+
+
+viii. now change the directory to "one"
+
+ cd ../../../..
+ 
+ix. remove all files only from directory named "five"
+from current directory (i.e. one)
+
+ rm ./two/three/four/Five/*
+
+ 
+x. remove directory named "five" from current directory
+(i.e. one)
+
+ rmdir ./two/three/four/Five
+
+
+xi. remove whole directory named "four" from current
+directory (i.e. one)
+rm -R ./two/three/four
+
+
+xii. change to your home directory.
+
+cd ~
+
+
+9. change the time stamp of file named "3.txt" which resides
+in directory named "three".(man touch)
+
+touch -t [[CC]YY]MMDDhhmm[.SS] ~/study/OS_CLASSWORK/One/two/three/3.txt
+
+
+
+
+
+
+
+
+
